@@ -373,13 +373,11 @@ if __name__ == "__main__":
     stop = False
     cmd_lst = []
 
-    print("Enter a command in the following form (N is and int between 0-15): \ncreate N\ndestroy N\nend")
     while stop == False:
-        cmd = input("Enter command:")
+        cmd = input()
         cmd = cmd.split()
         
         if cmd[0].upper() not in ["CREATE", "DESTROY"]:
-            print("---Program ended---")
             break
         try:
             N = int(cmd[1])
@@ -403,10 +401,8 @@ if __name__ == "__main__":
     pm2 = ProcessManagerV2()
     
     CmdSq(pm1, cmd_lst)
-    print("-----------PM2-----------")
     CmdSq(pm2, cmd_lst)
     
-    print("-------------End---------------")
            
 
     timer1(cmd_lst)
