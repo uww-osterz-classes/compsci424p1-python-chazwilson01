@@ -1,6 +1,6 @@
 """
 COMPSCI 424 Program 1
-Name: Charlie Wilson
+Name: Charles Wilson
 """
 import time
 class PCB:
