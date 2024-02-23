@@ -255,12 +255,12 @@ class ProcessManagerV2:
 
         if pcb.getFirstChild() is None:
 
-            self.pcbs.remove(pcb)
+            self.pcbs[targetPid] = None
             return
         
         child = pcb.getFirstChild()
         self.recursivlyDestroy(targetPid, child)
-        self.pcbs.remove(pcb)
+        self.pcbs[targetPid] = None
         
         
         
