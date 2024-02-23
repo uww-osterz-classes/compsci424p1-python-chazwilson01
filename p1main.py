@@ -314,15 +314,15 @@ def CmdSq(PM, seq):
         
         if seq[i][0].upper() == "CREATE":
             PM.create(N)
-            PM.showProcessInfo()
-            print()
-            print()
+            # PM.showProcessInfo()
+            # print()
+            # print()
 
         elif seq[i][0].upper() == "DESTROY":
             PM.destroy(N)
-            PM.showProcessInfo()
-            print()
-            print()
+            # PM.showProcessInfo()
+            # print()
+            # print()
 
 def timer1(seq):
 
