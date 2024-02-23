@@ -323,7 +323,7 @@ def CmdSq(PM, seq):
             # PM.showProcessInfo()
             # print()
             # print()
-
+    PM.showProcessInfo()
 def timer1(seq):
 
     
