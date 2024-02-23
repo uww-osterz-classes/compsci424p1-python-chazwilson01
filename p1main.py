@@ -42,7 +42,6 @@ class ProcessManagerV1:
             
             
         elif p_pid >= len(self.pcbs) or self.pcbs[p_pid] is None:
-            print("Parent Process not Found")
             return
         
         new_pid = len(self.pcbs)
@@ -59,7 +58,6 @@ class ProcessManagerV1:
 
     def destroy(self, p_pid):
         if p_pid >= len(self.pcbs) or self.pcbs[p_pid] is None:
-            print("Parent Process not Found")
             return       
         
         
@@ -190,7 +188,6 @@ class ProcessManagerV2:
             return
         
         if p_pid >= len(self.pcbs) or self.pcbs[p_pid] is None:
-            print("Parent ID does not exist")
             return
         
         new_pid = len(self.pcbs)
@@ -212,14 +209,13 @@ class ProcessManagerV2:
             new_pcb.setOlderSibling(child)
             
     def destroy(self, targetPid):
+        if targetPid >= len(self.pcbs) or self.pcbs[targetPid] is None:
+                return
         
         pcb = self.pcbs[targetPid]
         
         
         if pcb.getParent() is not None:
-            if targetPid >= len(self.pcbs) or self.pcbs[targetPid] is None:
-                print("Parent Process not Found")
-                return  
 
             if pcb.getOlderSibling() is None:
 
@@ -255,12 +251,12 @@ class ProcessManagerV2:
 
         if pcb.getFirstChild() is None:
 
-            self.pcbs[targetPid] = None
+            self.pcbs.remove(pcb)
             return
         
         child = pcb.getFirstChild()
         self.recursivlyDestroy(targetPid, child)
-        self.pcbs[targetPid] = None
+        self.pcbs.remove(pcb)
         
         
         
