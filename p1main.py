@@ -30,7 +30,7 @@ class PCB:
         
 class ProcessManagerV1:
     def __init__(self):
-        self.pcbs = []
+        self.pcbs = [PCB(0)]
     
     def create(self, p_pid):
         
@@ -178,7 +178,7 @@ class PCB2:
         
 class ProcessManagerV2:
     def __init__(self):
-        self.pcbs = []
+        self.pcbs = [PCB2(0)]
     
     def create(self, p_pid):
         if len(self.pcbs) == 0:
